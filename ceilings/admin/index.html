@@ -1,0 +1,103 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><title>Ровно — демонстрация панели</title><style>:root{--accent:#1f3b63;--accent-2:#2e5590;--light:#edf1f6;--warm:#d9a35f;--warm-soft:#f6ecdf;--ink:#18212d;--muted:#5d6979;--line:#dde3ea;--bg:#f8f8f6;font-family:Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg)}html{scroll-behavior:smooth;scroll-padding-top:110px}
+a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button,a{transition:.2s}button{cursor:pointer}button:disabled{cursor:default;opacity:.6}a:hover{color:var(--accent-2)}
+.demo-banner{font-size:10px;letter-spacing:.8px;text-align:center;background:#1b2635;color:#d8e0ea;padding:10px 18px;line-height:1.6}
+header{position:sticky;top:0;z-index:30;background:#f8f8f6ee;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:84px;display:flex;align-items:center;gap:28px;max-width:1240px;margin:auto;padding:0 24px}
+.brand{font-size:22px;font-weight:750;letter-spacing:-.8px;display:flex;align-items:center;gap:10px;max-width:340px;line-height:1.1}
+.mark{width:30px;height:30px;border-radius:9px;background:var(--accent);position:relative;flex:none}.mark:after{content:"";position:absolute;left:6px;right:6px;top:9px;height:3px;border-radius:3px;background:var(--warm);box-shadow:0 7px 0 #ffffff70}
+nav{display:flex;gap:26px;margin-left:auto;font-size:13px;font-weight:550}
+.top-contact{font-size:13px;font-weight:650;white-space:nowrap}
+.button{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;border:0;border-radius:999px;padding:16px 26px;font-size:13px;font-weight:650;gap:10px}
+.button:hover{color:#fff;background:var(--accent-2)}.button.small{font-size:12px;padding:12px 18px;white-space:nowrap}
+.button.secondary{background:#fff;color:var(--accent);border:1px solid var(--line)}.button.secondary:hover{background:var(--light);color:var(--accent)}
+.text-link{font-size:13px;font-weight:650;color:var(--accent)}
+main{max-width:1216px;width:calc(100% - 64px);margin:auto}
+.eyebrow{font-size:10px;letter-spacing:1.8px;color:var(--accent-2);font-weight:750;display:block;margin-bottom:18px;text-transform:uppercase}
+h1,h2{font-weight:500;letter-spacing:-.045em;line-height:1.07;margin:0 0 22px}h1{font-size:60px}h1 em{font-style:normal;color:var(--accent-2);position:relative}h1 em:after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--warm),#f2d3a6);box-shadow:0 0 18px #d9a35f99}
+h2{font-size:40px}h3{font-size:18px;letter-spacing:-.02em;font-weight:700;margin:0 0 12px}
+p{font-size:14px;color:var(--muted);line-height:1.8;margin:0 0 18px}
+.hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:56px;padding:56px 0 44px}
+.hero-copy{font-size:16px;max-width:440px}.actions{display:flex;align-items:center;gap:24px;margin-top:28px;flex-wrap:wrap}
+.hero-points{display:flex;gap:22px;font-size:12px;color:var(--muted);margin-top:34px;flex-wrap:wrap}.hero-points span:before{content:"";display:inline-block;width:14px;height:2px;background:var(--warm);vertical-align:middle;margin-right:8px;border-radius:2px}
+.hero-photo{height:540px;position:relative;border-radius:28px;background:#dfe4ea;overflow:visible}
+.hero-photo>img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}
+.light-line{position:absolute;left:28px;right:28px;top:-14px;height:4px;border-radius:4px;background:linear-gradient(90deg,transparent,var(--warm),#ffe3b8,var(--warm),transparent);box-shadow:0 0 24px #d9a35fcc}
+.photo-card{position:absolute;left:-28px;bottom:44px;display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:0 18px 40px #1b263529;max-width:320px}
+.photo-card>span{width:42px;height:42px;background:var(--light);color:var(--accent);border-radius:12px;display:grid;place-items:center;font-size:20px;flex:none}
+.photo-card b{font-size:13px;display:block}.photo-card small{font-size:11px;color:var(--muted);display:block;margin-top:4px;line-height:1.5}
+.photo-note{position:absolute;right:16px;bottom:14px;color:#fff;font-size:10px;background:#18212d80;padding:4px 9px;border-radius:999px}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:12px;font-weight:550}
+.trust span:before{content:"✓";color:var(--accent-2);font-weight:800;margin-right:8px}
+section:not(.hero){padding:68px 0}
+.section-lead{max-width:640px}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.service{border-radius:22px;background:#fff;padding:24px;border:1px solid var(--line);display:flex;flex-direction:column}
+.service:nth-child(3n+1){background:var(--light);border-color:#dfe6ef}.service:nth-child(3n+2){background:var(--warm-soft);border-color:#efe2d1}
+.service-top{display:flex;justify-content:space-between;margin-bottom:24px;align-items:center}
+.service-icon{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:#ffffffc0;color:var(--accent);font-size:21px}
+.service-top small{font-size:10px;color:#8a95a3;font-weight:650}
+.service p{font-size:13px;flex:1}
+.service-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #18212d14;padding-top:14px;gap:10px;font-size:13px}
+.service-bottom a{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#fff;font-size:18px;color:var(--accent);border:1px solid var(--line)}
+.service-bottom a:hover{background:var(--accent);color:#fff}
+.approach{display:grid;grid-template-columns:1fr 1.15fr;gap:72px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:28px}.steps article>b{font-size:13px;font-weight:750;color:var(--accent-2);display:inline-block;margin-bottom:14px;background:var(--light);padding:6px 10px;border-radius:8px}
+.steps h3{font-size:16px}.steps p{font-size:13px}
+.calc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;margin-top:28px}
+form,.quote{border:1px solid var(--line);border-radius:22px;padding:30px;background:#fff}
+label{display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:650;margin-bottom:18px}
+input,textarea,select{border:1px solid #d5dce5;border-radius:11px;padding:12px 14px;background:#fff;color:var(--ink);width:100%;min-width:0;font-size:14px}
+textarea{resize:vertical;min-height:90px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.field-hint{font-size:11px;font-weight:500;color:#8a95a3}
+.stepper{display:flex;align-items:center;border:1px solid #d5dce5;border-radius:11px;overflow:hidden;background:#fff}
+.stepper button{border:0;background:var(--light);color:var(--accent);width:40px;height:44px;font-size:18px;flex:none}
+.stepper input{border:0;border-radius:0;text-align:center;padding:12px 4px;-moz-appearance:textfield}
+.stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+form>small{display:block;font-size:11px;color:#7d8896;margin-top:16px}
+.quote{background:#1b2635;color:#e6ebf2;align-self:start;position:sticky;top:110px}
+.quote .eyebrow{color:#f0c88f}.quote h3{color:#fff}.quote p{color:#b7c2d0;font-size:13px}
+.quote-amount{font-size:32px;letter-spacing:-1px;margin:18px 0 6px;color:#fff;font-weight:600}
+.quote-sub{font-size:12px;color:#9fb0c4;margin-bottom:20px}
+.quote-rows{border-top:1px solid #ffffff1f;margin-top:8px;padding-top:12px}
+.quote-row{display:flex;justify-content:space-between;font-size:13px;padding:7px 0;color:#c9d3df;gap:14px}.quote-row b{color:#fff;font-weight:650;text-align:right}
+.note{font-size:12px;border-top:1px solid #ffffff1f;padding-top:16px;margin-top:14px;line-height:1.7;color:#9fb0c4}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.7 inherit;background:#ffffff12;border-radius:12px;padding:16px;color:#e6ebf2;margin:16px 0 0}
+.contacts{display:grid;grid-template-columns:1fr 1fr;gap:72px;border-top:1px solid var(--line)}
+.contacts strong{font-size:26px;font-weight:600;display:block;margin:6px 0}.contacts p{margin:12px 0}
+.proposal-card{background:var(--light);padding:32px;border-radius:22px;border:1px solid #dfe6ef}.proposal-card h3{font-size:27px}.proposal-card p{font-size:13px}
+footer{max-width:1216px;width:calc(100% - 64px);margin:auto;display:flex;justify-content:space-between;padding:26px 0;border-top:1px solid var(--line);gap:30px;font-size:11px;color:#7d8896}
+footer a{text-decoration:underline}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #5a83c4;outline-offset:3px}
+/* панель */
+.panel-layout{display:grid;grid-template-columns:220px 1fr;gap:34px;padding-top:40px}
+.panel-nav{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;align-self:start;position:sticky;top:110px}
+.panel-nav h3{font-size:14px;margin-bottom:20px}.panel-nav a{display:block;margin:16px 0;font-size:13px}.panel-nav a.active{color:var(--accent-2);font-weight:750}
+.panel-content h1{font-size:40px}
+.panel-head{display:flex;justify-content:space-between;gap:24px;align-items:center;margin:34px 0 20px}.panel-head h2{font-size:26px;margin:0}
+.panel-notice{background:var(--warm-soft);border:1px solid #efe2d1;padding:18px 22px;border-radius:14px;font-size:13px;color:#6f5534;line-height:1.7}
+.panel-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.panel-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}.panel-card h3{font-size:17px}
+.status{display:inline-block;background:var(--light);color:var(--accent-2);padding:5px 10px;font-size:11px;font-weight:650;border-radius:999px;margin-bottom:18px}
+.panel-card label{font-size:12px}.panel-card textarea{font-size:12px}
+.panel-card input:disabled,.panel-card textarea:disabled,.panel-card select:disabled{color:#4c5867;background:#f7f9fb;opacity:1}
+.panel-save{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px;display:flex;gap:24px;justify-content:space-between;align-items:center;margin-top:24px}.panel-save p{margin:0;font-size:12px;max-width:440px}
+.panel-main{padding-bottom:64px}.preview-label{color:#7d8896;font-size:11px;line-height:1.7}.panel-wide{margin-top:34px}
+.calc-table{width:100%;border-collapse:collapse;font-size:13px}.calc-table td{padding:11px 0;border-bottom:1px solid var(--line)}.calc-table td:last-child{text-align:right;width:46%}.calc-table input{text-align:right}
+@media(max-width:1000px){.top-contact{display:none}h1{font-size:50px}.hero{gap:32px}.hero-photo{height:480px}.panel-layout{grid-template-columns:180px 1fr;gap:20px}.panel-grid{grid-template-columns:1fr}.contacts{gap:40px}.calc-grid{grid-template-columns:1fr}.quote{position:static}.trust{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){main,footer{width:calc(100% - 32px)}.nav{height:70px;padding:0 16px;gap:12px}.brand{font-size:18px;max-width:200px}.mark{width:26px;height:26px}nav{display:none}.button.small{margin-left:auto;font-size:11px;padding:11px 14px}.demo-banner{font-size:9px;padding:8px 14px}.hero{grid-template-columns:1fr;gap:34px;padding-top:30px}h1{font-size:42px}.hero-copy{font-size:15px}.hero-photo{height:400px}.photo-card{left:12px;right:12px;bottom:16px;max-width:none;padding:14px}.photo-note{top:12px;bottom:auto}.trust{font-size:11px;gap:14px}.service-grid{grid-template-columns:1fr;gap:14px}h2{font-size:31px}section:not(.hero){padding:46px 0}.approach,.contacts{grid-template-columns:1fr;gap:30px}.steps{gap:22px}.two{gap:12px}.three{grid-template-columns:1fr 1fr 1fr;gap:8px}.three label{font-size:11px}.stepper button{width:30px}form,.quote{padding:20px}.contacts strong{font-size:22px}footer{display:block;font-size:10px}footer>span{display:block;margin:8px 0}.panel-layout{grid-template-columns:1fr;padding-top:24px}.panel-nav{display:none}.panel-content h1{font-size:31px}.panel-head{align-items:flex-start}.panel-head h2{font-size:22px}.panel-head .button{font-size:11px;padding:11px 14px}.panel-card{padding:20px}.panel-save{display:block}.panel-save .button{margin-top:14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style></head><body>
+<div class="demo-banner">ПРЕДПРОСМОТР ПАНЕЛИ · ТОЛЬКО ПРОСМОТР · РЕГИСТРАЦИЯ И СОХРАНЕНИЕ ОТКЛЮЧЕНЫ</div>
+<header><div class="nav"><a class="brand" href="../"><span class="mark" aria-hidden="true"></span>Ровно</a><span class="top-contact" style="margin-left:auto">Демонстрационная панель владельца</span><a class="button small secondary" href="../">Посмотреть сайт ↗</a></div></header>
+<main class="panel-main"><div class="panel-layout"><aside class="panel-nav"><h3>Управление сайтом</h3><a class="active" href="#services">Потолки и цены</a><a href="#calc">Калькулятор</a><a href="#company">Данные компании</a><span class="preview-label">Без регистрации<br>Без доступа к базе<br>Без сохранения</span></aside>
+<div class="panel-content"><span class="eyebrow">Ровно · возможности полной версии</span><h1>Цены и калькулятор —<br>под вашим контролем.</h1><p>Образец панели управления с данными компании. В рабочей версии владелец сам меняет виды потолков, цены за м², стоимость светильников и доступность услуг.</p>
+<div class="panel-notice">Это демонстрация для знакомства. Здесь нельзя зарегистрироваться, получить права администратора или сохранить изменения. Персональные доступы создаются после покупки и передачи сайта.</div>
+<div class="panel-head" id="services"><h2>Потолки <small style="font-size:13px;color:#8a95a3;font-weight:500">6 в каталоге</small></h2><button class="button secondary" disabled>＋ Добавить вид потолка</button></div>
+<div class="panel-grid"><article class="panel-card"><h3>Матовые потолки</h3><span class="status">Пример</span><label>Цена<input disabled value="590 ₽" title="590 ₽"></label><div class="two"><label>Единица расчёта<input disabled value="за м²"></label><label>Доступность<select disabled><option>Показывать на сайте</option></select></label></div><label>Описание<textarea disabled>Классическая ровная поверхность без бликов — подходит для любой комнаты.</textarea></label></article><article class="panel-card"><h3>Глянцевые потолки</h3><span class="status">Пример</span><label>Цена<input disabled value="690 ₽" title="690 ₽"></label><div class="two"><label>Единица расчёта<input disabled value="за м²"></label><label>Доступность<select disabled><option>Показывать на сайте</option></select></label></div><label>Описание<textarea disabled>Отражающая поверхность визуально делает помещение выше и светлее.</textarea></label></article><article class="panel-card"><h3>Сатиновые потолки</h3><span class="status">Пример</span><label>Цена<input disabled value="650 ₽" title="650 ₽"></label><div class="two"><label>Единица расчёта<input disabled value="за м²"></label><label>Доступность<select disabled><option>Показывать на сайте</option></select></label></div><label>Описание<textarea disabled>Мягкий перламутровый отлив — между матовой и глянцевой фактурой.</textarea></label></article><article class="panel-card"><h3>Парящие потолки</h3><span class="status">Пример</span><label>Цена<input disabled value="1 290 ₽" title="1 290 ₽"></label><div class="two"><label>Единица расчёта<input disabled value="за м²"></label><label>Доступность<select disabled><option>Показывать на сайте</option></select></label></div><label>Описание<textarea disabled>Подсветка по периметру — потолок будто отделён от стен.</textarea></label></article><article class="panel-card"><h3>Световые линии</h3><span class="status">Пример</span><label>Цена<input disabled value="от 2 900 ₽ / пог. м" title="от 2 900 ₽ / пог. м"></label><div class="two"><label>Единица расчёта<input disabled value="как на сайте компании"></label><label>Доступность<select disabled><option>Показывать на сайте</option></select></label></div><label>Описание<textarea disabled>Встроенные линии света вместо люстр и точечных светильников.</textarea></label></article><article class="panel-card"><h3>Многоуровневые потолки</h3><span class="status">Пример</span><label>Цена<input disabled value="—" title="—"></label><div class="two"><label>Единица расчёта<input disabled value="по запросу"></label><label>Доступность<select disabled><option>Показывать на сайте</option></select></label></div><label>Описание<textarea disabled>Зонирование комнаты уровнями, нишами и подсветкой.</textarea></label></article></div>
+<div class="panel-card panel-wide" id="calc"><h3>Параметры калькулятора</h3><span class="status">Влияют на предварительный расчёт на сайте</span><table class="calc-table"><tbody><tr><td>Светильник (монтаж)</td><td><input disabled value="450 ₽"></td></tr><tr><td>Обход трубы</td><td><input disabled value="300 ₽"></td></tr><tr><td>Дополнительный угол</td><td><input disabled value="200 ₽"></td></tr><tr><td>Углов входит в цену полотна</td><td><input disabled value="4"></td></tr></tbody></table><p class="preview-label" style="margin-top:14px">Примерные значения для демонстрации.</p></div>
+<div class="panel-save"><p>В полной версии изменения сохраняются в общей базе и сразу видны посетителям сайта. В этом демо сохранение отключено.</p><button class="button" disabled>Сохранить изменения</button></div>
+<div class="panel-card panel-wide" id="company"><h3>Данные компании</h3><div class="two"><label>Название<input disabled value="Ровно"></label><label>Регион<input disabled value="Москва"></label></div><div class="two"><label>Телефон<input disabled value="+7 (000) 123-45-67"></label><label>E-mail<input disabled value="hello@rovno.example"></label></div><label>Адрес<input disabled value="Москва (вымышленный адрес)"></label><p class="preview-label">Вымышленные данные демо-шаблона.</p></div>
+</div></div></main>
+<footer><span>Независимое демонстрационное предложение · Максим</span><span>Не является административной панелью действующего сайта компании</span></footer></body></html>
